@@ -1,0 +1,56 @@
+{
+  "package": {
+    "dependencies": {
+      "@testing-library/jest-dom": "^5.14.1",
+      "@testing-library/react": "^13.0.0",
+      "@testing-library/user-event": "^13.2.1",
+      "@types/jest": "^27.0.1",
+      "@types/node": "^16.7.13",
+      "@types/react": "^18.0.0",
+      "@types/react-dom": "^18.0.0",
+      "typescript": "^4.4.2",
+      "web-vitals": "^2.1.0",
+      "craco": "^0.0.3",
+      "cz-conventional-changelog": "^3.3.0",
+      "husky": "^7.0.0",
+      "lint-staged": "^13.0.0",
+      "prettier": "2.6.2",
+      "commitizen": "^4.2.4",
+      "@commitlint/cli": "^17.3.0",
+      "@commitlint/config-conventional": "^17.3.0",
+      "env-cmd": "^10.1.0",
+      "axios": "^0.27.2",
+      "react-dom": "^18.1.0",
+      "react-router-dom": "^6.3.0",
+      "recoil": "^0.7.3",
+      "sass": "^1.54.0",
+      "@ant-design/pro-components": "2.6.20",
+      "@types/crypto-js": "^4.1.1",
+      "crypto-js": "^4.1.1"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "build:alpha": "./node_modules/env-cmd/bin/env-cmd.js -f .env.development react-scripts build",
+      "build:rel": "./node_modules/env-cmd/bin/env-cmd.js -f .env.test react-scripts build",
+      "test": "react-scripts test --coverage",
+      "prepare": "husky install",
+      "lint": "eslint src --ext .ts,.tsx --max-warnings 0",
+      "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+      "changelog:all": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+    },
+    "eslintConfig": {
+      "extends": [
+        "react-app",
+        "react-app/jest",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ],
+      "parserOptions": {
+        "project": [
+          "./tsconfig.json"
+        ],
+        "tsconfigRootDir": "."
+      }
+    }
+  }
+}
